@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Incompleeta';
+    src: local('Incompleeta Light'), local('Incompleeta-Light'),
+        url('IncompleetaLight.woff2') format('woff2'),
+        url('IncompleetaLight.woff') format('woff'),
+        url('IncompleetaLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
