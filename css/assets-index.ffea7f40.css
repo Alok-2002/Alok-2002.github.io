@@ -17104,12 +17104,12 @@ button.btn[disabled] {
   filter: drop-shadow(0 3px 5px rgba(var(--bs-primary-rgb), 1));
 }
 
-#theme-btn .fa-light fa-sun-bright {
+#theme-btn .fa-sun-bright {
   display: none;
+  border: none;
   background-color: white;
-
-  
 }
+
 
 [data-aos][data-aos][data-aos-duration="50"],
 body[data-aos-duration="50"] [data-aos] {

@@ -4355,51 +4355,50 @@ window.onscroll = function () {
   ji > a ? Ui.classList.add("sticky-top") : Ui.classList.remove("sticky-top"),
     (ji = a);
 };
-const fc = document.querySelector("#theme-btn"),
-  zi = document.querySelector(".fa-solid fa-moon"),
-  Bi = document.querySelector(".bi-light bi bi-sun"),
-  Wi = {
-    light: {
-      primary: "#ffffff",
-      secondary: "#444f5a",
-      accent: "#0564bd",
-      primaryRGB: "255, 255, 255",
-      secondaryRGB: "68, 79, 90",
-    },
-    dark: {
-      primary: "#22222b",
-      secondary: "#a2a1a6",
-      accent: "#0564bd",
-      primaryRGB: "34, 34, 43",
-      secondaryRGB: "162,161,166",
-    },
-  };
-let Cs = !0;
+const fc = document.querySelector("#theme-btn");
+const zi = document.querySelector(".fa-moon");
+const Bi = document.querySelector(".fa-sun");
+const Wi = {
+  light: {
+    primary: "#ffffff",
+    secondary: "#444f5a",
+    accent: "#0564bd",
+    primaryRGB: "255, 255, 255",
+    secondaryRGB: "68, 79, 90",
+  },
+  dark: {
+    primary: "#22222b",
+    secondary: "#a2a1a6",
+    accent: "#0564bd",
+    primaryRGB: "34, 34, 43",
+    secondaryRGB: "162, 161, 166",
+  },
+};
+let Cs = true;
+
 fc.addEventListener("click", pc);
+
 function Hi(a) {
-  document.documentElement.style.setProperty("--bs-primary", a.primary),
-    document.documentElement.style.setProperty("--bs-secondary", a.secondary),
-    document.documentElement.style.setProperty("--bs-accent", a.accent),
-    document.documentElement.style.setProperty(
-      "--bs-primary-rgb",
-      a.primaryRGB
-    ),
-    document.documentElement.style.setProperty(
-      "--bs-secondary-rgb",
-      a.secondaryRGB
-    );
+  document.documentElement.style.setProperty("--bs-primary", a.primary);
+  document.documentElement.style.setProperty("--bs-secondary", a.secondary);
+  document.documentElement.style.setProperty("--bs-accent", a.accent);
+  document.documentElement.style.setProperty("--bs-primary-rgb", a.primaryRGB);
+  document.documentElement.style.setProperty("--bs-secondary-rgb", a.secondaryRGB);
 }
+
 function pc() {
-  Cs
-    ? (Hi(Wi.dark),
-      (zi.style.display = "none"),
-      (Bi.style.display = "block"),
-      (Cs = !1))
-    : (Hi(Wi.light),
-      (zi.style.display = "block"),
-      (Bi.style.display = "none"),
-      (Cs = !0));
+  Cs = !Cs;
+  if (Cs) {
+    Hi(Wi.light);
+    zi.style.display = "block";
+    Bi.style.display = "none";
+  } else {
+    Hi(Wi.dark);
+    zi.style.display = "none";
+    Bi.style.display = "block";
+  }
 }
+
 var Zr =
   typeof globalThis != "undefined"
     ? globalThis
