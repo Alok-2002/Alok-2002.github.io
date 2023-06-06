@@ -4357,7 +4357,7 @@ window.onscroll = function () {
 };
 const fc = document.querySelector("#theme-btn"),
   zi = document.querySelector(".fa-solid fa-moon"),
-  Bi = document.querySelector(".fa-light fa-sun-bright"),
+  Bi = document.querySelector(".bi-light bi bi-sun"),
   Wi = {
     light: {
       primary: "#ffffff",
