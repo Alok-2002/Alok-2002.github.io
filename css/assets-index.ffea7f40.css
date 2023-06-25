@@ -18291,3 +18291,18 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos] {
   transform: scale(1.05);
   color:#6baef1;
 }
+
+.col-3. {
+  color: #fff;
+  padding: 10px;
+  background-color: #3b5998;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.facebook-button:hover {
+  background-color: #2d4373;
+}
