@@ -18263,3 +18263,21 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos] {
 [data-aos="flip-down"].aos-animate {
   transform: perspective(2500px) rotateX(0);
 }
+
+
+.btn {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border-style:ridge;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
