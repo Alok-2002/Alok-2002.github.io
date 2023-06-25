@@ -18272,12 +18272,17 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos] {
   background-color: #3498db;
   color: #fff;
   text-decoration: none;
-  border-radius: 4px;
+  border: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  border-style:ridge;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px 2px #2980b9;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .btn:hover {
   background-color: #2980b9;
+  transform: scale(1.05);
 }
