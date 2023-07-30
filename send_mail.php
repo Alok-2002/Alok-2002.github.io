@@ -1,35 +1,67 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php'; // Include the PHPMailer library
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get data from form
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
-    
-    // Email destination
-    $to = "sharmaalok02gwl@gmail.com";
-    
-    // Email headers
-    $headers = "From: noreply@soulfulscribbles.com" . "\r\n" . "CC: thealoksharma30@gmail.com";
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $subject = $_POST["subject"];
+    $message = $_POST["message"];
 
-    // Compose the email message
-    $txt = "Name: " . $name . "\r\nEmail: " . $email . "\r\nSubject: " . $subject . "\r\nMessage: " . $message;
+    // Validate the form data (e.g., check for empty fields, valid email address)
+    $errors = array();
 
-    // Send the email
-    if (mail($to, $subject, $txt, $headers)) {
-        // If the email is sent successfully, you can show the "thank you" message or an empty page
-        echo "<!DOCTYPE html>
-              <html>
-                  <head>
-                      <title>Form Submitted</title>
-                  </head>
-                  <body>
-                      <p class='thanks'>Thank you. I will reply soon.</p>
-                  </body>
-              </html>";
+    if (empty($name)) {
+        $errors[] = "Name is required.";
+    }
+
+    if (empty($email)) {
+        $errors[] = "Email is required.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Invalid email format.";
+    }
+
+    if (empty($subject)) {
+        $errors[] = "Subject is required.";
+    }
+
+    if (empty($message)) {
+        $errors[] = "Message is required.";
+    }
+
+    if (empty($errors)) {
+        // Send the email
+        $mail = new PHPMailer(true); // Create a new PHPMailer instance
+
+        try {
+            // Server settings
+            $mail->isSMTP();
+            $mail->Host = 'smtp.example.com'; // Specify your SMTP server
+            $mail->SMTPAuth = true;
+            $mail->Username = 'your_username@example.com'; // SMTP username
+            $mail->Password = 'your_password'; // SMTP password
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+
+            // Recipients
+            $mail->setFrom($email, $name);
+            $mail->addAddress('thealoksharma30@gmail.com'); // Add the recipient email address
+
+            // Content
+            $mail->isHTML(false);
+            $mail->Subject = $subject;
+            $mail->Body = "Name: $name\nEmail: $email\nSubject: $subject\nMessage: $message";
+
+            $mail->send(); // Send the email
+            echo "success";
+        } catch (Exception $e) {
+            echo "error: " . $mail->ErrorInfo;
+        }
     } else {
-        // If there is an error sending the email, you can show an error message or handle it as you wish
-        echo "Error sending the message. Please try again later.";
+        // Return the validation errors
+        echo implode("\n", $errors);
     }
 }
 ?>
