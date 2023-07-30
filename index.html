@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
     <link rel="manifest" href="./favicons/site.webmanifest">
     
+    
     <meta name="keywords" content="alok,alok-2002, soulful, scribbles, .tech, soulfulscribbles, soulfulscribbles.tech, soulfulscribbles website, https://soulfulscribbles.tech , sharma, sharma2002, Frontend, developer, javascript, github, freelancer, website, programmer, site, aloksharma, portfolio ,html ,css ,javascript ,github-topics, github topics, alok-2002 github , alok-sharma2002-, alok-sharma github, quizzify, python/>
     <meta name="description" content="I'm a Frontend Developer And A Python Developer from India who is passionate about delivering value to businessess through technology. I love the challenge of finding creative solutions to problems, and I enjoy collaborating with teams to achieve great results.">
     <meta name="google-site-verification" content="PBNvZp4y0C4ul3V64DmyjKb3EHKD4F9QEAv9tsgH4jE">
@@ -350,7 +351,7 @@
                                             <p class="thanks">Thank you. I will reply soon.</p>
                                         </div>
                                         <div class="mt-3 text-center text-lg-end"><button
-                                                class="btn rounded-pill bg-accent text-white mx-auto" type="submit"
+                                                class="btn rounded-pill bg-accent text-white mx-auto" onclick="SendMail()" type="submit"
                                                 id="send" disabled>Send Message</button></div>
                                         <div class="spinner-border text-accent mx-auto" role="status"><span
                                                 class="visually-hidden">Loading...</span></div>
@@ -381,6 +382,12 @@
         </footer>
     </div>
     <script data-cfasync="false" src="js/cloudflare-static-email-decode.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        ( function(){
+            emailjs.init("UdQ6dk8Fh3fYSHwnU");
+        })();
+    </script>
 </body>
 
 </html>
