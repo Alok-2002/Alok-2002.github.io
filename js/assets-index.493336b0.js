@@ -12380,10 +12380,10 @@ function ds() {
     Ce.value.split(" ").length > 5
   );
 }
-const lu = "UdQ6dk8Fh3fYSHwnU",
-  hu = "alok_2002",
-  cu = "soulful_scribbles",
-  uu = "qrn9lcvi4tjtp1p4",
+const lu = "1sk9CG-9ic3jITh2U",
+  hu = "portfolio_service",
+  cu = "contact_form",
+  uu = "3k6wnfqhoc5aovmn",
   du = `https://api.ipregistry.co/?key=${uu}`,
   fu = "https://api.emailjs.com/api/v1.0/email/send";
 async function pu(a) {
